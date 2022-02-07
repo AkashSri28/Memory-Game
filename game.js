@@ -16,7 +16,7 @@ function startOver(){
 }
 
 //Game start
-$(document).on("keypress", function(){
+$(".start-button").on("click", function(){
   if(!started){
     $("#level-title").text("Level "+level);
     nextSequence();
@@ -89,7 +89,7 @@ function checkAnswer(currentLevel){
   else{
     wrongAudio.play();
     $("body").addClass("game-over");
-    $("#level-title").text("Game Over, Press Any Key to Restart");
+    $("#level-title").text("Game Over, Press Restart Key to Play Again");
     const timeout = setTimeout(function(){
       $("body").removeClass("game-over");
     }, 200);
